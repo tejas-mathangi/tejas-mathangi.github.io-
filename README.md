@@ -93,10 +93,9 @@ Search for these placeholders in the files:
 
 | Placeholder | Where to change |
 |------------|-----------------|
-| `your@email.com` | `index.html` (2 places) + `index.html` footer |
-| `tejas-mathangi` | GitHub/LinkedIn links in `index.html` |
-| Project card content | Cards 01–04 in `index.html` |
-| Stats numbers | `.about__stats` in `index.html` |
+| `your@email.com` | `index.html` (2 places) |
+
+*The project cards and about section stats have already been populated with your real projects from `/TEJ/PROJECTS/`.*
 
 ---
 
