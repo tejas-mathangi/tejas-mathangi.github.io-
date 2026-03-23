@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tejas Mathangi — developer portfolio. Building thoughtful software for the web." />
+    <meta name="description" content="Tejas Mathangi — CS student and self-taught developer. Building thoughtful software for the web." />
     <title>Tejas Mathangi — Developer</title>
 
     <!--
-      FONTS — loaded from Google Fonts
-      Instrument Serif: elegant serif for headlines
-      DM Mono: monospaced for body text (gives a code-notebook feel)
+      FONTS — Google Fonts
+      Instrument Serif: elegant serif for headlines (the editorial look)
+      DM Mono: monospaced for body text (code-notebook aesthetic)
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,76 +24,58 @@
   <body>
 
     <!-- =============================================
-         NAV
-         A <header> wrapping a <nav> is the most
-         semantic choice. The header is sticky;
-         JS adds .scrolled to it on scroll.
-         The hamburger is hidden on desktop via CSS.
+         NAV — sticky, logo left / links right.
+         JS adds .scrolled on scroll → CSS shows border.
+         Hamburger only visible ≤640px.
     ============================================= -->
     <header class="nav" id="nav">
       <nav class="nav__inner">
-
-        <!-- Logo: a simple serif monogram -->
         <a href="#hero" class="nav__logo">TM.</a>
 
-        <!--
-          Hamburger button — only shown on mobile (≤640px).
-          aria-label makes it accessible to screen readers.
-          aria-expanded tells assistive tech whether menu is open.
-          The three <span>s are the three animated bars.
-        -->
         <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <!-- Nav links: JS closes this on link click (mobile) -->
         <ul class="nav__links" id="nav-links">
           <li><a href="#projects" class="nav__link">Projects</a></li>
           <li><a href="#about"    class="nav__link">About</a></li>
           <li><a href="#contact"  class="nav__link">Contact</a></li>
         </ul>
-
       </nav>
     </header>
 
     <!-- =============================================
-         HERO
-         The opening "above the fold" section.
-         Technique: Flexbox column to stack badge,
-         headline, subtext, CTAs, and skills vertically.
+         HERO — "above the fold" opening section.
+         Layout: Flexbox column (badge → headline →
+         subtext → CTAs → skills strip).
+         The hero fades in via IntersectionObserver.
     ============================================= -->
     <section class="hero fade-in" id="hero">
       <div class="hero__inner">
 
-        <!--
-          "Available for work" badge.
-          The animated dot (pulsing green circle) uses
-          @keyframes pulse in CSS — no JS needed.
-        -->
+        <!-- Pill badge with animated availability dot -->
         <div class="hero__badge">
           <span class="hero__dot"></span>
           Available for work
         </div>
 
         <!--
-          Headline uses Instrument Serif for drama.
-          The <em> tag applies italic + accent colour.
-          font-size uses clamp() — more on this in style.css.
+          Headline: Instrument Serif, fluid sizing via clamp().
+          <em> = italic + terracotta accent colour.
         -->
         <h1 class="hero__headline">
-          I build things <br />for the <em>web.</em>
+          I build things<br />for the <em>web.</em>
         </h1>
 
-        <!-- Supporting paragraph — muted colour -->
         <p class="hero__subtext">
           CS student &amp; self-taught developer based in India.
-          Focused on clean interfaces, functional code, and learning
-          by shipping real projects.
+          I ship projects across Python, Java, Django, and vanilla JS —
+          always focused on clean code and learning by doing.
         </p>
 
-        <!-- Two CTAs side-by-side (Flexbox row) -->
+        <!-- Two CTAs — Flexbox row -->
         <div class="hero__ctas">
           <a href="#projects" class="btn btn--primary">View my work</a>
           <a href="#contact"  class="btn btn--ghost">Get in touch →</a>
@@ -101,24 +83,27 @@
 
         <!-- Skills tag strip -->
         <div class="hero__skills">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
+          <span class="tag">HTML / CSS</span>
           <span class="tag">JavaScript</span>
           <span class="tag">Python</span>
           <span class="tag">Java</span>
+          <span class="tag">Django</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">OpenCV</span>
           <span class="tag">Git</span>
           <span class="tag">Linux</span>
-          <span class="tag">OpenCV</span>
         </div>
 
       </div>
     </section>
 
     <!-- =============================================
-         PROJECTS
-         Technique: CSS Grid (2 columns on desktop,
-         1 column on mobile). Each card is an <a> tag
-         wrapping the whole card — easy, accessible.
+         PROJECTS — 2-column CSS Grid.
+         8 real projects from /TEJ/PROJECTS, ordered
+         by complexity / impressiveness.
+         Each card is an <a> wrapping the full card
+         → entire card is clickable, which is more
+         accessible than a nested button.
     ============================================= -->
     <section class="projects fade-in" id="projects">
       <div class="section-inner">
@@ -127,39 +112,64 @@
 
         <div class="projects__grid">
 
-          <!-- ── Project 01 ── -->
+          <!-- ── 01 · Event Booking System API ── -->
           <a
-            href="https://github.com/tejas-mathangi"
+            href="https://github.com/tejas-mathangi/event-booking-system-api-django"
             target="_blank"
             rel="noopener noreferrer"
             class="project-card"
           >
             <span class="project-card__num">01</span>
-            <h3 class="project-card__title">Java To-Do CLI</h3>
+            <h3 class="project-card__title">Event Booking API</h3>
             <p class="project-card__desc">
-              Terminal task manager in Java. Supports add, view, complete,
-              and delete with a clean menu-driven UI. First deep-dive into OOP.
+              Full backend REST API for booking events. Handles JWT authentication
+              (register/login), admin-only Events CRUD, capacity validation, and
+              user booking management. Built with Django + DRF.
             </p>
             <div class="project-card__tags">
-              <span class="tag tag--sm">Java</span>
-              <span class="tag tag--sm">OOP</span>
-              <span class="tag tag--sm">CLI</span>
+              <span class="tag tag--sm">Django</span>
+              <span class="tag tag--sm">DRF</span>
+              <span class="tag tag--sm">JWT</span>
+              <span class="tag tag--sm">REST API</span>
             </div>
             <span class="project-card__cta">View on GitHub →</span>
           </a>
 
-          <!-- ── Project 02 ── -->
+          <!-- ── 02 · BlackJack Game ── -->
           <a
-            href="https://github.com/tejas-mathangi"
+            href="https://github.com/tejas-mathangi/black-jack-java"
             target="_blank"
             rel="noopener noreferrer"
             class="project-card"
           >
             <span class="project-card__num">02</span>
-            <h3 class="project-card__title">OpenCV Color Detector</h3>
+            <h3 class="project-card__title">BlackJack</h3>
             <p class="project-card__desc">
-              Python + OpenCV tool that detects dominant colors using HSV masking,
-              contour detection, and a live trackbar interface.
+              Terminal-based BlackJack game in Java. Full game loop with betting,
+              dealer AI (hits until 17), Ace soft/hard switching, and chip tracking.
+              1 player vs dealer.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">Java</span>
+              <span class="tag tag--sm">OOP</span>
+              <span class="tag tag--sm">Game Logic</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
+          <!-- ── 03 · OpenCV Image Resizer ── -->
+          <a
+            href="https://github.com/tejas-mathangi/opencv-image-resizer"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+            <span class="project-card__num">03</span>
+            <h3 class="project-card__title">OpenCV Image Resizer</h3>
+            <p class="project-card__desc">
+              Python CLI tool to resize (exact or by scale %) and crop images
+              using OpenCV. Auto boundary validation, side-by-side preview,
+              and output saved to <code>/output</code>.
             </p>
             <div class="project-card__tags">
               <span class="tag tag--sm">Python</span>
@@ -169,39 +179,63 @@
             <span class="project-card__cta">View on GitHub →</span>
           </a>
 
-          <!-- ── Project 03 ── -->
+          <!-- ── 04 · Snake Game ── -->
           <a
-            href="https://github.com/tejas-mathangi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-            <span class="project-card__num">03</span>
-            <h3 class="project-card__title">BlackJack Game</h3>
-            <p class="project-card__desc">
-              Terminal BlackJack in Java — full game logic: deck shuffling,
-              hand scoring, dealer AI, and win/bust detection.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Java</span>
-              <span class="tag tag--sm">Game Logic</span>
-              <span class="tag tag--sm">OOP</span>
-            </div>
-            <span class="project-card__cta">View on GitHub →</span>
-          </a>
-
-          <!-- ── Project 04 ── -->
-          <a
-            href="https://github.com/tejas-mathangi"
+            href="https://github.com/tejas-mathangi/SnakeGame-java"
             target="_blank"
             rel="noopener noreferrer"
             class="project-card"
           >
             <span class="project-card__num">04</span>
-            <h3 class="project-card__title">This Portfolio</h3>
+            <h3 class="project-card__title">Snake Game</h3>
             <p class="project-card__desc">
-              Hand-crafted with pure HTML, CSS, and vanilla JS.
-              No frameworks. Editorial minimalist design with dark mode.
+              Classic Snake in Java with Swing GUI. Custom game loop, collision
+              detection, score tracking, and directional controls. First foray
+              into graphical Java applications.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">Java</span>
+              <span class="tag tag--sm">Swing</span>
+              <span class="tag tag--sm">Game Loop</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
+          <!-- ── 05 · Django Blog ── -->
+          <a
+            href="https://github.com/tejas-mathangi/Blog-django"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+            <span class="project-card__num">05</span>
+            <h3 class="project-card__title">Blog Platform</h3>
+            <p class="project-card__desc">
+              Full-stack blog built with Django. User auth, post creation/editing,
+              template rendering, and an admin interface. First complete Django
+              web application.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">Django</span>
+              <span class="tag tag--sm">Python</span>
+              <span class="tag tag--sm">Full-stack</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
+          <!-- ── 06 · Chess (Web-Dev) ── -->
+          <a
+            href="https://github.com/tejas-mathangi/CHESS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+            <span class="project-card__num">06</span>
+            <h3 class="project-card__title">Chess</h3>
+            <p class="project-card__desc">
+              Two-player chess in the browser — built with vanilla HTML, CSS, and
+              JavaScript. Piece movement, legal-move validation, and turn switching.
+              No libraries used.
             </p>
             <div class="project-card__tags">
               <span class="tag tag--sm">HTML</span>
@@ -211,15 +245,59 @@
             <span class="project-card__cta">View on GitHub →</span>
           </a>
 
+          <!-- ── 07 · To-Do CLI ── -->
+          <a
+            href="https://github.com/tejas-mathangi/todo-java"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+            <span class="project-card__num">07</span>
+            <h3 class="project-card__title">To-Do List CLI</h3>
+            <p class="project-card__desc">
+              Menu-driven terminal task manager in Java. Add, view, complete, and
+              delete tasks. Clean OOP structure across four classes: Task,
+              TaskManager, ConsoleUI, Main.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">Java</span>
+              <span class="tag tag--sm">OOP</span>
+              <span class="tag tag--sm">CLI</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
+          <!-- ── 08 · This Portfolio ── -->
+          <a
+            href="https://github.com/tejas-mathangi/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+            <span class="project-card__num">08</span>
+            <h3 class="project-card__title">This Portfolio</h3>
+            <p class="project-card__desc">
+              Hand-crafted with pure HTML, CSS, and vanilla JS — no frameworks.
+              Editorial minimalist design, CSS Grid/Flexbox, full dark mode via
+              CSS custom properties, and IntersectionObserver animations.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">HTML</span>
+              <span class="tag tag--sm">CSS</span>
+              <span class="tag tag--sm">Vanilla JS</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
         </div>
       </div>
     </section>
 
     <!-- =============================================
-         ABOUT
-         Technique: CSS Grid (2 columns).
-         Left = bio text. Right = 2×2 stats grid
-         (grid inside a grid!).
+         ABOUT — 2-column layout.
+         Left: bio text.   Right: 2×2 stats grid.
+         Layout: outer CSS Grid → bio | stats.
+         Stats use a nested CSS Grid (2×2).
     ============================================= -->
     <section class="about fade-in" id="about">
       <div class="section-inner">
@@ -228,34 +306,44 @@
 
         <div class="about__grid">
 
-          <!-- Left: bio text -->
+          <!-- Bio text -->
           <div class="about__bio">
             <p>
-              Hey, I'm <strong>Tejas</strong> — a CS student and self-taught developer
-              based in India. I'm drawn to the intersection of clean design and
-              functional code.
+              Hey, I'm <strong>Tejas</strong> — a CS student and self-taught
+              developer based in India. I'm drawn to the space where clean design
+              meets working code.
             </p>
             <p>
-              I learn best by building. Whether it's a Java CLI app, a Python computer
-              vision tool, or a hand-coded website — I care about doing it properly, not
-              just making it work.
+              I learn best by building. Every project in this portfolio started
+              because I wanted to deeply understand something — OOP in Java,
+              REST APIs in Django, computer vision with OpenCV, or how a browser
+              renders HTML. I ship, then I learn from what breaks.
             </p>
             <p>
-              Currently exploring web development and open-source contributions,
-              and looking for internship opportunities where I can contribute and
-              grow fast.
+              Currently looking for internship and freelance opportunities where
+              I can contribute fast and grow faster. If you're building something
+              interesting, let's talk.
             </p>
+            <!-- Social links inside bio for easy reach -->
+            <div class="about__socials">
+              <a href="https://github.com/tejas-mathangi" target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+              </a>
+              <a href="https://linkedin.com/in/tejas-mathangi" target="_blank" rel="noopener noreferrer">
+                LinkedIn ↗
+              </a>
+            </div>
           </div>
 
-          <!-- Right: 2×2 stats grid -->
+          <!-- 2×2 stats grid -->
           <div class="about__stats">
             <div class="stat">
-              <span class="stat__num">4+</span>
-              <span class="stat__label">Projects built</span>
+              <span class="stat__num">8+</span>
+              <span class="stat__label">Projects shipped</span>
             </div>
             <div class="stat">
-              <span class="stat__num">3</span>
-              <span class="stat__label">Languages used</span>
+              <span class="stat__num">5</span>
+              <span class="stat__label">Languages &amp; frameworks</span>
             </div>
             <div class="stat">
               <span class="stat__num">100%</span>
@@ -272,33 +360,31 @@
     </section>
 
     <!-- =============================================
-         CONTACT
-         Technique: simple centred Flexbox column.
-         A mailto: link is the simplest CTA —
-         no backend or form handling needed.
+         CONTACT — Simple mailto CTA block.
+         No form, no backend, no fuss.
+         Layout: simple max-width column.
     ============================================= -->
     <section class="contact fade-in" id="contact">
       <div class="section-inner">
         <div class="contact__block">
           <h2 class="contact__heading">Let's work together.</h2>
           <p class="contact__subtext">
-            Open to internships, freelance, and collaborations.
-            Drop me a line and let's build something.
+            Open to internships, freelance projects, and interesting collaborations.
+            Drop me a message and let's build something worth building.
           </p>
-          <!-- Replace with your real email address -->
+          <!-- ↓ Replace with your real email address -->
           <a href="mailto:your@email.com" class="btn btn--primary">Say hello →</a>
         </div>
       </div>
     </section>
 
     <!-- =============================================
-         FOOTER
-         Technique: Flexbox row, space-between.
-         Copyright left, socials right.
+         FOOTER — copyright left, socials right.
+         Layout: Flexbox row with space-between.
     ============================================= -->
     <footer class="footer">
       <div class="section-inner footer__inner">
-        <p class="footer__copy">© 2026 Tejas Mathangi</p>
+        <p class="footer__copy">© 2026 Tejas Mathangi — built from scratch</p>
         <ul class="footer__socials">
           <li>
             <a href="https://github.com/tejas-mathangi" target="_blank" rel="noopener noreferrer">
@@ -311,7 +397,7 @@
             </a>
           </li>
           <li>
-            <!-- Replace with your real email -->
+            <!-- ↓ Replace with your real email -->
             <a href="mailto:your@email.com">Email</a>
           </li>
         </ul>
