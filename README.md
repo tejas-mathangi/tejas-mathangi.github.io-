@@ -85,17 +85,6 @@ npx serve .
 | `IntersectionObserver` | Scroll fade-in in `script.js` |
 | Mobile-first responsive | `@media (max-width: 640px)` |
 
----
-
-## Customising
-
-Search for these placeholders in the files:
-
-| Placeholder | Where to change |
-|------------|-----------------|
-| `your@email.com` | `index.html` (2 places) |
-
-*The project cards and about section stats have already been populated with your real projects from `/TEJ/PROJECTS/`.*
 
 ---
 
