@@ -58,19 +58,6 @@ npx serve .
 
 ---
 
-## Deploying to GitHub Pages
-
-1. Push all files to a GitHub repo named `<your-username>.github.io`  
-   *(or any repo — Pages works from any branch)*
-
-2. Go to **Settings → Pages → Source → Deploy from a branch**
-
-3. Select `main` branch, root `/` folder → Save
-
-4. Your site will be live at:  
-   `https://<your-username>.github.io`
-
----
 
 ## CSS Concepts Used
 
