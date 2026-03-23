@@ -148,6 +148,12 @@ body {
   font-size: 20px;
   letter-spacing: -0.3px;
   color: var(--ink);
+  /* Subtle fade on hover — same transition pattern as links */
+  transition: opacity var(--transition);
+}
+
+.nav__logo:hover {
+  opacity: 0.65;
 }
 
 .nav__links {
@@ -160,15 +166,58 @@ body {
   color: var(--ink2);
   letter-spacing: 0.06em;
   text-transform: lowercase;
+  /* position: relative lets us place the ::after underline */
+  position: relative;
+  padding-bottom: 2px;
   transition: color var(--transition);
 }
 
+/*
+  The accent underline uses a ::after pseudo-element.
+  
+  A pseudo-element is like a fake element CSS generates for you
+  without any extra HTML — here it's a tiny bar under the link.
+  
+  We start it at width: 0 (invisible) and grow it to width: 100%
+  on hover/active. The transition makes it slide in from the left.
+*/
+.nav__link::after {
+  content: '';               /* required — pseudo-elements need content */
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;                  /* starts hidden */
+  height: 1px;
+  background: var(--accent); /* terracotta underline */
+  transition: width 0.25s ease;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;               /* slides in → full width */
+}
+
 .nav__link:hover,
-.nav__link.active {   /* .active added by JS as you scroll */
+.nav__link.active {          /* .active is added by JS on scroll */
   color: var(--ink);
 }
 
-/* Hamburger — three bars. Hidden on desktop. */
+/*
+  HAMBURGER BUTTON — hidden on desktop, shown ≤640px.
+  
+  The × animation is pure CSS — no extra classes or JS needed
+  beyond toggling .open on the parent button.
+  
+  How the × works (key insight):
+  - Bar 1 (nth-child 1): rotates +45°
+  - Bar 2 (nth-child 2): fades to opacity 0 (disappears)
+  - Bar 3 (nth-child 3): rotates -45°
+  Together they form an ×.
+  
+  We use translateY to move bars 1 and 3 toward the centre
+  BEFORE rotating, so the × forms in place.
+  Bar 1 gap offset = (bar height + gap) = 1.5px + 5px = 6.5px
+*/
 .nav__hamburger {
   display: none; /* shown at ≤640px via media query */
   flex-direction: column;
@@ -177,6 +226,15 @@ body {
   border: none;
   cursor: pointer;
   padding: 4px;
+  /* Stop button outline on click — we use a custom focus style */
+  outline: none;
+}
+
+/* Add a visible focus ring for keyboard users */
+.nav__hamburger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .nav__hamburger span {
@@ -184,8 +242,30 @@ body {
   width: 22px;
   height: 1.5px;
   background: var(--ink);
-  /* These transitions animate the × shape when open */
-  transition: transform var(--transition), opacity var(--transition);
+  border-radius: 2px;
+  /* Transitions for both the × animation AND colour changes */
+  transition: transform 0.28s ease, opacity 0.2s ease, background var(--transition);
+  transform-origin: center; /* rotate from the middle of each bar */
+}
+
+/* ── Hamburger open state (JS adds .open to the <ul>, we
+       detect it with the sibling combinator ~ in the same parent) ──
+   Simpler approach: JS also toggles data-open on the button itself. */
+
+/* When the button has aria-expanded="true", animate to × */
+.nav__hamburger[aria-expanded="true"] span:nth-child(1) {
+  /* Move down to centre then rotate */
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav__hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0; /* middle bar vanishes */
+  transform: scaleX(0);
+}
+
+.nav__hamburger[aria-expanded="true"] span:nth-child(3) {
+  /* Move up to centre then rotate the other way */
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 
