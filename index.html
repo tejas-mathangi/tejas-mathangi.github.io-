@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tejas Mathangi — CS student and self-taught developer. Building thoughtful software for the web." />
-    <title>Tejas Mathangi — Developer</title>
+    <meta name="description" content="Tejas Mathangi — Software engineer building backend systems, developer tools, and full-stack applications. Python, FastAPI, Django, React." />
+    <title>Tejas Mathangi — Software Engineer</title>
 
     <!--
       FONTS — Google Fonts
-      Instrument Serif: elegant serif for headlines (the editorial look)
-      DM Mono: monospaced for body text (code-notebook aesthetic)
+      Instrument Serif: elegant serif for headlines
+      Inter: clean sans-serif for body text (recruiter-friendly)
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -40,6 +40,7 @@
 
         <ul class="nav__links" id="nav-links">
           <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#skills"   class="nav__link">Skills</a></li>
           <li><a href="#about"    class="nav__link">About</a></li>
           <li><a href="#contact"  class="nav__link">Contact</a></li>
         </ul>
@@ -47,79 +48,99 @@
     </header>
 
     <!-- =============================================
-         HERO — "above the fold" opening section.
-         Layout: Flexbox column (badge → headline →
-         subtext → CTAs → skills strip).
-         The hero fades in via IntersectionObserver.
+         HERO — above the fold opening section.
     ============================================= -->
     <section class="hero fade-in" id="hero">
       <div class="hero__inner">
 
-        <!--
-          Headline: Instrument Serif, fluid sizing via clamp().
-          <em> = italic + terracotta accent colour.
-        -->
+
+
         <h1 class="hero__headline">
-          I build things<br />for the <em>web.</em>
+          I build <em>systems</em><br />that actually work.
         </h1>
 
         <p class="hero__subtext">
-          CS student &amp; self-taught developer based in India.
-          I ship projects across Python, Java, Django, and vanilla JS —
-          always focused on clean code and learning by doing.
+          Software engineer based in India. I design and ship backend APIs,
+          developer tools, and full-stack applications — from custom version
+          control systems to production-ready microservices.
         </p>
 
-        <!-- Two CTAs — Flexbox row -->
         <div class="hero__ctas">
           <a href="#projects" class="btn btn--primary">View my work</a>
           <a href="#contact"  class="btn btn--ghost">Get in touch →</a>
-        </div>
-
-        <!-- Skills tag strip -->
-        <div class="hero__skills">
-          <span class="tag">HTML / CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Python</span>
-          <span class="tag">Java</span>
-          <span class="tag">Django</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Git</span>
-          <span class="tag">Linux</span>
         </div>
 
       </div>
     </section>
 
     <!-- =============================================
-         PROJECTS — 2-column CSS Grid.
-         8 real projects from /TEJ/PROJECTS, ordered
-         by complexity / impressiveness.
-         Each card is an <a> wrapping the full card
-         → entire card is clickable, which is more
-         accessible than a nested button.
+         PROJECTS — Featured project + grid
     ============================================= -->
     <section class="projects fade-in" id="projects">
       <div class="section-inner">
 
-        <p class="section-label">Selected work</p>
+        <p class="section-label">Featured work</p>
 
+        <!-- ── FEATURED PROJECT: MiniVC ── -->
+        <a
+          href="https://github.com/tejas-mathangi/mini-GIT"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="featured-card fade-in-card"
+        >
+          <div class="featured-card__badge">★ Featured Project</div>
+          <h3 class="featured-card__title">MiniVC — Version Control From Scratch</h3>
+          <ul class="featured-card__highlights">
+            <li>Engineered a complete version control system in pure Python (zero dependencies) with SHA-256 content-addressed object storage, tree/blob/commit model, and full branching</li>
+            <li>Implemented Myers diff algorithm (O(ND)) from scratch for line-by-line file comparison with color-coded output</li>
+            <li>Built a self-contained dark-themed Web UI served via stdlib HTTP server with real-time 2s polling, commit timeline, file tree browser, and diff viewer</li>
+          </ul>
+          <div class="featured-card__tags">
+            <span class="tag tag--sm">Python</span>
+            <span class="tag tag--sm">SHA-256</span>
+            <span class="tag tag--sm">Myers Diff</span>
+            <span class="tag tag--sm">HTTP Server</span>
+            <span class="tag tag--sm">CLI + Web UI</span>
+          </div>
+          <span class="featured-card__cta">View on GitHub →</span>
+        </a>
+
+        <!-- ── PROJECT GRID (2 cols) ── -->
         <div class="projects__grid">
 
-          <!-- ── 01 · Event Booking System API ── -->
+          <!-- ── ShortIt ── -->
+          <a
+            href="https://github.com/tejas-mathangi/shortit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card fade-in-card"
+          >
+            <h3 class="project-card__title">ShortIt — URL Shortening Microservice</h3>
+            <ul class="project-card__highlights">
+              <li>Designed a RESTful URL shortener with FastAPI, implementing async route handlers, Pydantic request validation, and SQLAlchemy ORM for MySQL persistence</li>
+              <li>Built click-tracking analytics endpoint that records access counts per short code — a production-ready pattern for link attribution</li>
+            </ul>
+            <div class="project-card__tags">
+              <span class="tag tag--sm">FastAPI</span>
+              <span class="tag tag--sm">SQLAlchemy</span>
+              <span class="tag tag--sm">MySQL</span>
+              <span class="tag tag--sm">Pydantic</span>
+            </div>
+            <span class="project-card__cta">View on GitHub →</span>
+          </a>
+
+          <!-- ── Event Booking API ── -->
           <a
             href="https://github.com/tejas-mathangi/event-booking-system-api"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card"
+            class="project-card fade-in-card"
           >
-            <span class="project-card__num">01</span>
             <h3 class="project-card__title">Event Booking API</h3>
-            <p class="project-card__desc">
-              Full backend REST API for booking events. Handles JWT authentication
-              (register/login), admin-only Events CRUD, capacity validation, and
-              user booking management. Built with Django + DRF.
-            </p>
+            <ul class="project-card__highlights">
+              <li>Architected a multi-role REST API with Django + DRF: JWT-authenticated user registration, admin-only event CRUD, and atomic booking with capacity validation</li>
+              <li>Implemented role-based permission guards and serializer-level validation to prevent overbooking at the API layer</li>
+            </ul>
             <div class="project-card__tags">
               <span class="tag tag--sm">Django</span>
               <span class="tag tag--sm">DRF</span>
@@ -129,156 +150,65 @@
             <span class="project-card__cta">View on GitHub →</span>
           </a>
 
-          <!-- ── 02 · BlackJack Game ── -->
+          <!-- ── Screentime ── -->
           <a
-            href="https://github.com/tejas-mathangi/BlackJack-Java"
+            href="https://screentime-iota.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card"
+            class="project-card fade-in-card"
           >
-            <span class="project-card__num">02</span>
-            <h3 class="project-card__title">BlackJack</h3>
-            <p class="project-card__desc">
-              Terminal-based BlackJack game in Java. Full game loop with betting,
-              dealer AI (hits until 17), Ace soft/hard switching, and chip tracking.
-              1 player vs dealer.
-            </p>
+            <h3 class="project-card__title">Screentime — Movie Search Frontend</h3>
+            <ul class="project-card__highlights">
+              <li>Built a cinematic React + Vite movie search app with 500ms debounced input, AbortController race condition prevention, and paginated OMDB API integration</li>
+              <li>Engineered persistent watchlist (localStorage), skeleton loading, type/sort filtering, and keyboard navigation — deployed on Vercel</li>
+            </ul>
             <div class="project-card__tags">
-              <span class="tag tag--sm">Java</span>
-              <span class="tag tag--sm">OOP</span>
-              <span class="tag tag--sm">Game Logic</span>
+              <span class="tag tag--sm">React</span>
+              <span class="tag tag--sm">Vite</span>
+              <span class="tag tag--sm">OMDB API</span>
+              <span class="tag tag--sm">Vercel</span>
             </div>
-            <span class="project-card__cta">View on GitHub →</span>
+            <span class="project-card__cta">View Live App →</span>
           </a>
 
-          <!-- ── 03 · OpenCV Image Resizer ── -->
+          <!-- ── Matrix Insight ── -->
           <a
-            href="https://github.com/tejas-mathangi/opencv-image-resizer"
+            href="https://github.com/tejas-mathangi/matrix-insight"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card"
+            class="project-card fade-in-card"
           >
-            <span class="project-card__num">03</span>
-            <h3 class="project-card__title">OpenCV Image Resizer</h3>
-            <p class="project-card__desc">
-              Python CLI tool to resize (exact or by scale %) and crop images
-              using OpenCV. Auto boundary validation, side-by-side preview,
-              and output saved to <code>/output</code>.
-            </p>
+            <h3 class="project-card__title">Matrix Insight — Linear Algebra Visualizer</h3>
+            <ul class="project-card__highlights">
+              <li>Created a full-stack matrix operations tool: NumPy backend computes multiply, transpose, determinant, and inverse with step-by-step breakdowns</li>
+              <li>Built animated JavaScript frontend with interactive matrix grids and visual highlighting for row-column multiplication paths</li>
+            </ul>
             <div class="project-card__tags">
               <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">OpenCV</span>
-              <span class="tag tag--sm">Computer Vision</span>
-            </div>
-            <span class="project-card__cta">View on GitHub →</span>
-          </a>
-
-          <!-- ── 04 · Snake Game ── -->
-          <a
-            href="https://github.com/tejas-mathangi/MY-CODES/tree/main/JAVA/SnakeGame-java"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-            <span class="project-card__num">04</span>
-            <h3 class="project-card__title">Snake Game</h3>
-            <p class="project-card__desc">
-              Classic Snake in Java with Swing GUI. Custom game loop, collision
-              detection, score tracking, and directional controls. First foray
-              into graphical Java applications.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Java</span>
-              <span class="tag tag--sm">Swing</span>
-              <span class="tag tag--sm">Game Loop</span>
-            </div>
-            <span class="project-card__cta">View on GitHub →</span>
-          </a>
-
-          <!-- ── 05 · Django Blog ── -->
-          <a
-            href="https://github.com/tejas-mathangi/MY-CODES/tree/main/DJANGO/Blog-django"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-            <span class="project-card__num">05</span>
-            <h3 class="project-card__title">Blog Platform</h3>
-            <p class="project-card__desc">
-              Full-stack blog built with Django. User auth, post creation/editing,
-              template rendering, and an admin interface. First complete Django
-              web application.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Django</span>
-              <span class="tag tag--sm">Python</span>
+              <span class="tag tag--sm">NumPy</span>
+              <span class="tag tag--sm">JavaScript</span>
               <span class="tag tag--sm">Full-stack</span>
             </div>
             <span class="project-card__cta">View on GitHub →</span>
           </a>
 
-          <!-- ── 06 · Chess (Web-Dev) ── -->
+          <!-- ── OpenCV Color Detector ── -->
           <a
-            href="https://github.com/tejas-mathangi/MY-CODES/tree/main/WEB-DEV/CHESS"
+            href="https://github.com/tejas-mathangi/opencv-color-detector"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card"
+            class="project-card fade-in-card"
           >
-            <span class="project-card__num">06</span>
-            <h3 class="project-card__title">Chess</h3>
-            <p class="project-card__desc">
-              Two-player chess in the browser — built with vanilla HTML, CSS, and
-              JavaScript. Piece movement, legal-move validation, and turn switching.
-              No libraries used.
-            </p>
+            <h3 class="project-card__title">OpenCV Color Detector</h3>
+            <ul class="project-card__highlights">
+              <li>Built a real-time computer vision pipeline that isolates user-selected colors from images or live webcam feeds using HSV color space segmentation</li>
+              <li>Implemented interactive pixel-click color selection with dynamic HSV range calculation and mask-based highlighting</li>
+            </ul>
             <div class="project-card__tags">
-              <span class="tag tag--sm">HTML</span>
-              <span class="tag tag--sm">CSS</span>
-              <span class="tag tag--sm">JavaScript</span>
-            </div>
-            <span class="project-card__cta">View on GitHub →</span>
-          </a>
-
-          <!-- ── 07 · To-Do CLI ── -->
-          <a
-            href="https://github.com/tejas-mathangi/java-todo-list"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-            <span class="project-card__num">07</span>
-            <h3 class="project-card__title">To-Do List CLI</h3>
-            <p class="project-card__desc">
-              Menu-driven terminal task manager in Java. Add, view, complete, and
-              delete tasks. Clean OOP structure across four classes: Task,
-              TaskManager, ConsoleUI, Main.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Java</span>
-              <span class="tag tag--sm">OOP</span>
-              <span class="tag tag--sm">CLI</span>
-            </div>
-            <span class="project-card__cta">View on GitHub →</span>
-          </a>
-
-          <!-- ── 08 · This Portfolio ── -->
-          <a
-            href="https://github.com/tejas-mathangi/portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-            <span class="project-card__num">08</span>
-            <h3 class="project-card__title">This Portfolio</h3>
-            <p class="project-card__desc">
-              Hand-crafted with pure HTML, CSS, and vanilla JS — no frameworks.
-              Editorial minimalist design, CSS Grid/Flexbox, full dark mode via
-              CSS custom properties, and IntersectionObserver animations.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">HTML</span>
-              <span class="tag tag--sm">CSS</span>
-              <span class="tag tag--sm">Vanilla JS</span>
+              <span class="tag tag--sm">Python</span>
+              <span class="tag tag--sm">OpenCV</span>
+              <span class="tag tag--sm">NumPy</span>
+              <span class="tag tag--sm">Computer Vision</span>
             </div>
             <span class="project-card__cta">View on GitHub →</span>
           </a>
@@ -288,10 +218,62 @@
     </section>
 
     <!-- =============================================
-         ABOUT — 2-column layout.
-         Left: bio text.   Right: 2×2 stats grid.
-         Layout: outer CSS Grid → bio | stats.
-         Stats use a nested CSS Grid (2×2).
+         SKILLS — categorized badge layout
+    ============================================= -->
+    <section class="skills fade-in" id="skills">
+      <div class="section-inner">
+
+        <p class="section-label">Technical skills</p>
+
+        <div class="skills__grid">
+          <div class="skills__group">
+            <h4 class="skills__category">Languages</h4>
+            <div class="skills__tags">
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h4 class="skills__category">Backend</h4>
+            <div class="skills__tags">
+              <span class="tag">Django</span>
+              <span class="tag">Django REST Framework</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">JWT Auth</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h4 class="skills__category">Frontend</h4>
+            <div class="skills__tags">
+              <span class="tag">React</span>
+              <span class="tag">Vite</span>
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">CSS Grid / Flexbox</span>
+              <span class="tag">Responsive Design</span>
+            </div>
+          </div>
+          <div class="skills__group">
+            <h4 class="skills__category">Tools & Other</h4>
+            <div class="skills__tags">
+              <span class="tag">Git</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">SQLAlchemy</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         ABOUT — rewritten for engineers, not students
     ============================================= -->
     <section class="about fade-in" id="about">
       <div class="section-inner">
@@ -300,52 +282,50 @@
 
         <div class="about__grid">
 
-          <!-- Bio text -->
           <div class="about__bio">
             <p>
-              Hey, I'm <strong>Tejas</strong> — a CS student and self-taught
-              developer based in India. I'm drawn to the space where clean design
-              meets working code.
+              I'm <strong>Tejas Mathangi</strong> — a software engineer based in
+              Hyderabad, India. I build backend systems, developer tools, and
+              full-stack applications.
             </p>
             <p>
-              I learn best by building. Every project in this portfolio started
-              because I wanted to deeply understand something — OOP in Java,
-              REST APIs in Django, computer vision with OpenCV, or how a browser
-              renders HTML. I ship, then I learn from what breaks.
+              My approach is simple: pick a hard problem, build the solution from
+              scratch, and ship it. I've written a version control system with
+              SHA-256 hashing and Myers diff. I've designed REST APIs with JWT auth
+              and role-based access. I've built React frontends with real API
+              integrations and production patterns.
             </p>
             <p>
-              Currently looking for internship and freelance opportunities where
-              I can contribute fast and grow faster. If you're building something
-              interesting, let's talk.
+              I'm looking for engineering roles where I can contribute to real
+              systems from day one. If you're building something that matters,
+              let's talk.
             </p>
-            <!-- Social links inside bio for easy reach -->
             <div class="about__socials">
               <a href="https://github.com/tejas-mathangi" target="_blank" rel="noopener noreferrer">
                 GitHub ↗
               </a>
-              <a href="https://linkedin.com/in/tejas-mathangi" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/tejas-mathangi-33789732a" target="_blank" rel="noopener noreferrer">
                 LinkedIn ↗
               </a>
             </div>
           </div>
 
-          <!-- 2×2 stats grid -->
           <div class="about__stats">
             <div class="stat">
-              <span class="stat__num">8+</span>
-              <span class="stat__label">Projects shipped</span>
+              <span class="stat__num">6</span>
+              <span class="stat__label">Production-grade projects</span>
             </div>
             <div class="stat">
-              <span class="stat__num">5</span>
-              <span class="stat__label">Languages &amp; frameworks</span>
+              <span class="stat__num">5+</span>
+              <span class="stat__label">Frameworks & tools</span>
             </div>
             <div class="stat">
-              <span class="stat__num">100%</span>
-              <span class="stat__label">Self-taught</span>
+              <span class="stat__num">26</span>
+              <span class="stat__label">GitHub repositories</span>
             </div>
             <div class="stat">
               <span class="stat__num">∞</span>
-              <span class="stat__label">Infinite aura farm</span>
+              <span class="stat__label">Curiosity</span>
             </div>
           </div>
 
@@ -354,17 +334,15 @@
     </section>
 
     <!-- =============================================
-         CONTACT — Simple mailto CTA block.
-         No form, no backend, no fuss.
-         Layout: simple max-width column.
+         CONTACT — mailto CTA block
     ============================================= -->
     <section class="contact fade-in" id="contact">
       <div class="section-inner">
         <div class="contact__block">
-          <h2 class="contact__heading">Let's work together.</h2>
+          <h2 class="contact__heading">Let's build something<br />worth building.</h2>
           <p class="contact__subtext">
-            Open to internships, freelance projects, and interesting collaborations.
-            Drop me a message and let's build something worth building.
+            Open to engineering internships, full-time roles, and interesting
+            collaborations. I ship fast and learn faster.
           </p>
           <a href="mailto:mathangi.tejas@gmail.com" class="btn btn--primary">Say hello →</a>
         </div>
@@ -372,8 +350,7 @@
     </section>
 
     <!-- =============================================
-         FOOTER — copyright left, socials right.
-         Layout: Flexbox row with space-between.
+         FOOTER
     ============================================= -->
     <footer class="footer">
       <div class="section-inner footer__inner">
@@ -385,7 +362,7 @@
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/tejas-mathangi" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/tejas-mathangi-33789732a" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
           </li>
