@@ -76,8 +76,9 @@
     <!-- =============================================
          PROJECTS — Featured project + grid
     ============================================= -->
-    <section class="projects fade-in" id="projects">
-      <div class="section-inner">
+    <section class="projects fade-in glass-container" id="projects">
+      <div class="projects-glow"></div>
+      <div class="section-inner projects-inner">
 
         <p class="section-label">Featured work</p>
 
@@ -86,26 +87,26 @@
           href="https://github.com/tejas-mathangi/mini-GIT"
           target="_blank"
           rel="noopener noreferrer"
-          class="featured-card fade-in-card"
+          class="featured-card glass-card fade-in-card"
         >
-          <div class="featured-card__badge">★ Featured Project</div>
-          <h3 class="featured-card__title">MiniVC — Version Control From Scratch</h3>
-          <ul class="featured-card__highlights">
-            <li>Engineered a complete version control system in pure Python (zero dependencies) with SHA-256 content-addressed object storage, tree/blob/commit model, and full branching</li>
-            <li>Implemented Myers diff algorithm (O(ND)) from scratch for line-by-line file comparison with color-coded output</li>
-            <li>Built a self-contained dark-themed Web UI served via stdlib HTTP server with real-time 2s polling, commit timeline, file tree browser, and diff viewer</li>
-          </ul>
-          <div class="featured-card__tags">
-            <span class="tag tag--sm">Python</span>
-            <span class="tag tag--sm">SHA-256</span>
-            <span class="tag tag--sm">Myers Diff</span>
-            <span class="tag tag--sm">HTTP Server</span>
-            <span class="tag tag--sm">CLI + Web UI</span>
+          <div class="featured-card__visual">
+            <div class="card-image-placeholder minivc-bg"></div>
           </div>
-          <span class="featured-card__cta">View on GitHub →</span>
+          <div class="featured-card__content">
+            <div class="featured-card__badge">★ Featured Project</div>
+            <h3 class="featured-card__title">MiniVC — Version Control</h3>
+            <p class="card-desc">Engineered a complete version control system in pure Python (zero dependencies) with SHA-256 content-addressed object storage, tree/blob/commit model, and full branching. Also implemented Myers diff algorithm and a Web UI.</p>
+            <div class="card__tags">
+              <span class="tag tag--py">Python</span>
+              <span class="tag tag--sys">SHA-256</span>
+              <span class="tag tag--sys">Myers Diff</span>
+              <span class="tag tag--web">Web UI</span>
+            </div>
+            <span class="btn btn--primary card-btn">View on GitHub →</span>
+          </div>
         </a>
 
-        <!-- ── PROJECT GRID (2 cols) ── -->
+        <!-- ── PROJECT GRID (3 cols) ── -->
         <div class="projects__grid">
 
           <!-- ── ShortIt ── -->
@@ -113,20 +114,17 @@
             href="https://github.com/tejas-mathangi/shortit"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card fade-in-card"
+            class="project-card glass-card fade-in-card"
           >
-            <h3 class="project-card__title">ShortIt — URL Shortening Microservice</h3>
-            <ul class="project-card__highlights">
-              <li>Designed a RESTful URL shortener with FastAPI, implementing async route handlers, Pydantic request validation, and SQLAlchemy ORM for MySQL persistence</li>
-              <li>Built click-tracking analytics endpoint that records access counts per short code — a production-ready pattern for link attribution</li>
-            </ul>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">FastAPI</span>
-              <span class="tag tag--sm">SQLAlchemy</span>
-              <span class="tag tag--sm">MySQL</span>
-              <span class="tag tag--sm">Pydantic</span>
+            <div class="card-image-placeholder shortit-bg"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">ShortIt — Microservice</h3>
+              <p class="card-desc">RESTful URL shortener engineered with FastAPI, async DB session handling, Pydantic validation, and MySQL persistence.</p>
+              <div class="card__tags">
+                <span class="tag tag--fastapi">FastAPI</span>
+                <span class="tag tag--db">SQLAlchemy</span>
+              </div>
             </div>
-            <span class="project-card__cta">View on GitHub →</span>
           </a>
 
           <!-- ── Event Booking API ── -->
@@ -134,20 +132,17 @@
             href="https://github.com/tejas-mathangi/event-booking-system-api"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card fade-in-card"
+            class="project-card glass-card fade-in-card"
           >
-            <h3 class="project-card__title">Event Booking API</h3>
-            <ul class="project-card__highlights">
-              <li>Architected a multi-role REST API with Django + DRF: JWT-authenticated user registration, admin-only event CRUD, and atomic booking with capacity validation</li>
-              <li>Implemented role-based permission guards and serializer-level validation to prevent overbooking at the API layer</li>
-            </ul>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Django</span>
-              <span class="tag tag--sm">DRF</span>
-              <span class="tag tag--sm">JWT</span>
-              <span class="tag tag--sm">REST API</span>
+            <div class="card-image-placeholder eventapi-bg"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Event Booking API</h3>
+              <p class="card-desc">Multi-role REST API with Django + DRF: JWT auth, admin event CRUD, and concurrency-safe capacity validation logic.</p>
+              <div class="card__tags">
+                <span class="tag tag--django">Django</span>
+                <span class="tag tag--rest">DRF</span>
+              </div>
             </div>
-            <span class="project-card__cta">View on GitHub →</span>
           </a>
 
           <!-- ── Screentime ── -->
@@ -155,20 +150,17 @@
             href="https://screentime-iota.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card fade-in-card"
+            class="project-card glass-card fade-in-card"
           >
-            <h3 class="project-card__title">Screentime — Movie Search Frontend</h3>
-            <ul class="project-card__highlights">
-              <li>Built a cinematic React + Vite movie search app with 500ms debounced input, AbortController race condition prevention, and paginated OMDB API integration</li>
-              <li>Engineered persistent watchlist (localStorage), skeleton loading, type/sort filtering, and keyboard navigation — deployed on Vercel</li>
-            </ul>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">React</span>
-              <span class="tag tag--sm">Vite</span>
-              <span class="tag tag--sm">OMDB API</span>
-              <span class="tag tag--sm">Vercel</span>
+            <div class="card-image-placeholder screentime-bg"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Screentime</h3>
+              <p class="card-desc">React cinematic search app with debounced input, AbortController for race conditions, and persistent localStorage.</p>
+              <div class="card__tags">
+                <span class="tag tag--react">React</span>
+                <span class="tag tag--web">Vite</span>
+              </div>
             </div>
-            <span class="project-card__cta">View Live App →</span>
           </a>
 
           <!-- ── Matrix Insight ── -->
@@ -176,20 +168,17 @@
             href="https://github.com/tejas-mathangi/matrix-insight"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card fade-in-card"
+            class="project-card glass-card fade-in-card"
           >
-            <h3 class="project-card__title">Matrix Insight — Linear Algebra Visualizer</h3>
-            <ul class="project-card__highlights">
-              <li>Created a full-stack matrix operations tool: NumPy backend computes multiply, transpose, determinant, and inverse with step-by-step breakdowns</li>
-              <li>Built animated JavaScript frontend with interactive matrix grids and visual highlighting for row-column multiplication paths</li>
-            </ul>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">NumPy</span>
-              <span class="tag tag--sm">JavaScript</span>
-              <span class="tag tag--sm">Full-stack</span>
+            <div class="card-image-placeholder matrix-bg"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Matrix Insight</h3>
+              <p class="card-desc">NumPy backend calculates linear algebra operations; JavaScript frontend visualizes step-by-step calculations.</p>
+              <div class="card__tags">
+                <span class="tag tag--py">Python</span>
+                <span class="tag tag--js">Vanilla JS</span>
+              </div>
             </div>
-            <span class="project-card__cta">View on GitHub →</span>
           </a>
 
           <!-- ── OpenCV Color Detector ── -->
@@ -197,20 +186,17 @@
             href="https://github.com/tejas-mathangi/opencv-color-detector"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card fade-in-card"
+            class="project-card glass-card fade-in-card"
           >
-            <h3 class="project-card__title">OpenCV Color Detector</h3>
-            <ul class="project-card__highlights">
-              <li>Built a real-time computer vision pipeline that isolates user-selected colors from images or live webcam feeds using HSV color space segmentation</li>
-              <li>Implemented interactive pixel-click color selection with dynamic HSV range calculation and mask-based highlighting</li>
-            </ul>
-            <div class="project-card__tags">
-              <span class="tag tag--sm">Python</span>
-              <span class="tag tag--sm">OpenCV</span>
-              <span class="tag tag--sm">NumPy</span>
-              <span class="tag tag--sm">Computer Vision</span>
+            <div class="card-image-placeholder opencv-bg"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Color Detector</h3>
+              <p class="card-desc">Real-time computer vision pipeline utilizing HSV color space segmentation and dynamic interactive pixel masking.</p>
+              <div class="card__tags">
+                <span class="tag tag--sys">OpenCV</span>
+                <span class="tag tag--py">NumPy</span>
+              </div>
             </div>
-            <span class="project-card__cta">View on GitHub →</span>
           </a>
 
         </div>
