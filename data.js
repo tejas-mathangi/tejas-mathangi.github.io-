@@ -20,7 +20,7 @@ window.SITE = {
 
   location: "Hyderabad, India",
   timezone: "Asia/Kolkata",           // used for the live local-time chip
-  status: "Open to internships",       // or "" to hide
+  status: "",                          // e.g. "Open to internships"; "" hides the badge
 
   email: "mathangi.tejas@gmail.com",
   resume: "",                          // TODO: add resume.pdf next to index.html and set this to "resume.pdf"
@@ -33,12 +33,12 @@ window.SITE = {
 
   // About
   about: [
-    "I'm Tejas, a computer science undergraduate specialising in AI & machine learning at JNTUH, Hyderabad. I like problems where the structure of the data matters as much as the data itself.",
-    "Lately that means graph neural networks: modelling transactions as networks to catch coordinated fraud that tabular models miss. I care about the whole system, not just the score: sound baselines, explainable predictions and a dashboard someone can actually use."
+    "I'm a third-year Computer Science (AI & ML) student at JNTU Hyderabad. I enjoy understanding how things work under the hood, and building systems that teach me something new.",
+    "Alongside projects, I've solved 360+ DSA problems on LeetCode and other platforms, and I'm getting into regular LeetCode and Codeforces contests to sharpen my problem-solving. I mostly work with Python, Java and C++, along with FastAPI, Spring Boot, Django, Docker, PostgreSQL, Redis and PyTorch."
   ],
   stats: [
-    { value: "9.3",  label: "CGPA / 10" },        // TODO: update to your current CGPA
-    { value: "320+", label: "DSA problems" },     // TODO: update your count
+    { value: "9.4",  label: "CGPA / 10" },
+    { value: "360+", label: "DSA problems" },
     { value: "2028", label: "Graduating" }
   ],
 
@@ -49,24 +49,25 @@ window.SITE = {
     items: [
       {
         role: "B.Tech, Computer Science & Engineering (AI & ML)",
-        org: "JNTU Hyderabad",
+        org: "JNTUH College of Engineering Hyderabad",
         orgUrl: "",
-        period: "2024 — 2028",
+        period: "Sep 2024 — Sep 2028",
         location: "Hyderabad",
         points: [
-          "Coursework in data structures, operating systems, DBMS, compiler design and machine learning.",
-          "Built FraudLens as part of the credited Real-Time Research Project course."
+          "Specialisation in Artificial Intelligence & Machine Learning. Coursework includes data structures & algorithms and database management systems.",
+          "Built FraudLens as part of the credited Real-Time Research Project course.",
+          "Activities: hackathons & competitions, technical communities, badminton and volleyball."
         ],
-        tags: ["AI & ML", "CGPA 9.3"]             // TODO: keep CGPA current
+        tags: ["AI & ML", "CGPA 9.4", "Python", "C"]
       },
       {
-        role: "Class XII, MPC",
+        role: "Intermediate, Science (MPC)",
         org: "Aakash Institute",
         orgUrl: "",
-        period: "2022 — 2024",
+        period: "Jun 2022 — Jun 2024",
         location: "Hyderabad",
-        points: ["Mathematics, Physics and Chemistry. Scored 95%."],
-        tags: []
+        points: ["Specialised in Mathematics, Physics and Chemistry."],
+        tags: ["Grade 96%"]
       }
     ]
   },
@@ -101,13 +102,13 @@ window.SITE = {
   skills: {
     "Languages":   ["Python", "Java", "C++", "C", "SQL", "JavaScript"],
     "ML / DL":     ["PyTorch", "PyTorch Geometric", "scikit-learn", "Pandas", "NumPy", "OpenCV"],
-    "Backend":     ["Django", "Django REST Framework", "FastAPI", "Spring Boot", "REST APIs"],
-    "Tools & CS":  ["Git", "Linux", "Streamlit", "LaTeX", "DSA", "OOP", "DBMS", "Operating Systems"]
+    "Backend":     ["FastAPI", "Spring Boot", "Django", "Django REST Framework", "PostgreSQL", "Redis"],
+    "Tools & CS":  ["Git", "Docker", "Linux", "Streamlit", "DSA", "OOP", "DBMS", "Operating Systems"]
   },
 
   // Writing. Add posts here (Medium/Hashnode/dev.to links). Empty array hides the section.
   writing: [],
 
   // "Currently" block
-  now: "Building Verdict, a sandboxed online judge, one phase at a time: running untrusted code safely, queueing submissions and getting verdicts right. Also solving DSA problems every week."
+  now: "Building an online judge from scratch: it runs untrusted code inside sandboxed Docker containers, queues submissions through Redis, and returns verdicts like LeetCode does. I'm documenting the process, including what breaks and what I learn fixing it."
 };
