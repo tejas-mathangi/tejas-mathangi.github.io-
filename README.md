@@ -1,78 +1,40 @@
-# Tejas Mathangi — Portfolio
+# Portfolio
 
-A handcrafted personal portfolio website built with pure **HTML**, **CSS**, and **vanilla JavaScript**. No frameworks, no build tools — just the fundamentals.
+A minimal, dark-first personal site with an animated black hole behind the content.
+Plain HTML/CSS/JS: no framework, no build step.
 
-> **Learning project.** This site was built as a deep-dive into web fundamentals: CSS custom properties, Grid, Flexbox, `clamp()`, IntersectionObserver, and GitHub Pages deployment.
+## Edit your content
 
----
+All the content is in **`data.js`**: name, intro, experience, projects, skills, posts, email and links.
+Search for `TODO` and replace each one. Then:
 
-## Tech Stack
+- Resume: put `resume.pdf` next to `index.html` and set `resume: "resume.pdf"` in `data.js`. The Resume link stays hidden until you do.
+- The timeline currently shows Education. Change `timeline.label` and `timeline.title` and add entries when you have internships.
+- Projects can take an `image: "shots/verdict.png"` screenshot. Without one, they get a generated cover.
+- Set `writing: []` to hide the Writing section.
 
-| Layer      | Technology                            |
-|------------|---------------------------------------|
-| Structure  | HTML5 (semantic elements)             |
-| Styling    | CSS3 (custom properties, Grid, Flex)  |
-| Behaviour  | Vanilla JavaScript (ES6+)             |
-| Fonts      | Google Fonts (Instrument Serif + DM Mono) |
-| Hosting    | GitHub Pages                          |
+## Run locally
 
----
+```bash
+python3 -m http.server 5178
+```
+
+Then open http://localhost:5178.
+
+## Deploy (free)
+
+- **GitHub Pages:** push this folder to a repo, then go to Settings → Pages → "Deploy from branch" → `main` / root.
+- **Netlify / Vercel / Cloudflare Pages:** drag and drop the folder, or connect the repo. No build command is needed.
 
 ## Features
 
-- **Sticky navigation** — border appears on scroll via JS class toggle
-- **Mobile hamburger menu** — CSS dropdown, toggled by JS
-- **Smooth scroll** — `scrollIntoView({ behavior: 'smooth' })`
-- **Scroll fade-in animations** — `IntersectionObserver` API
-- **Active nav link** — highlights current section while scrolling
-- **Full dark mode** — `@media (prefers-color-scheme: dark)` with CSS variables
-- **Fluid typography** — `clamp()` for responsive font sizes without breakpoints
-- **Responsive layout** — single `@media (max-width: 640px)` breakpoint
+- Black hole drawn on a canvas, with lensing and a Doppler-brightened disk. It reacts to scrolling and the mouse, and pauses when the tab is hidden.
+- Dark and light themes that remember your choice (press `T`).
+- Command menu: `⌘K` / `Ctrl+K` or `/`.
+- Project filters, a cursor spotlight on project cards, scroll reveals, and a typing role line.
+- Live local-time chip, a "currently building" block, and copy-to-clipboard for your email.
+- Responsive layout with a full-screen mobile menu. Respects `prefers-reduced-motion`.
 
----
-
-## Project Structure
-
-```
-portfolio/
-├── index.html   ← all markup, semantically structured
-├── style.css    ← design system + layout + animations
-├── script.js    ← all JS features, heavily commented
-└── README.md    ← this file
-```
-
----
-
-## Running Locally
-
-No build step needed — just open the file:
-
-```bash
-# Option 1: open directly in browser
-open index.html
-
-# Option 2: use a local dev server (recommended)
-npx serve .
-# or with VS Code: right-click index.html → Open with Live Server
-```
-
----
-
-
-## CSS Concepts Used
-
-| Concept | Where |
-|---------|-------|
-| CSS custom properties (variables) | `:root` in `style.css` |
-| `clamp()` fluid sizing | `.hero__headline`, `.contact__heading` |
-| CSS Grid (2-col) | `.projects__grid`, `.about__grid` |
-| CSS Grid nested | `.about__stats` inside `.about__grid` |
-| Flexbox | Nav, hero CTAs, skills bar, footer |
-| `@keyframes` | `.hero__dot` pulse animation |
-| `IntersectionObserver` | Scroll fade-in in `script.js` |
-| Mobile-first responsive | `@media (max-width: 640px)` |
-
-
----
-
-*Built from scratch — no frameworks, no shortcuts.*
+The contact form opens the visitor's mail app (`mailto:`). To receive messages without that,
+create a free [Formspree](https://formspree.io) form, set the `<form>`'s `action` to its URL,
+and remove the submit handler in `main.js`.
