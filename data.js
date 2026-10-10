@@ -13,8 +13,8 @@ window.SITE = {
   // Hero
   intro: [
     "CS (AI & ML) undergrad at JNTUH, Hyderabad",
-    "Graph neural networks · ML systems · Backends",
-    "I build systems that actually work."
+    "Building an online judge from scratch",
+    "Curious about what happens under the hood."
   ],
   roles: ["ML Engineer", "Backend Developer", "Problem Solver"], // rotates in the hero
 
@@ -55,8 +55,7 @@ window.SITE = {
         location: "Hyderabad",
         points: [
           "Specialisation in Artificial Intelligence & Machine Learning. Coursework includes data structures & algorithms and database management systems.",
-          "Built FraudLens as part of the credited Real-Time Research Project course.",
-          "Activities: hackathons & competitions, technical communities, badminton and volleyball."
+          "Built FraudLens as part of the credited Real-Time Research Project course."
         ],
         tags: ["AI & ML", "CGPA 9.4", "Python", "C"]
       },
